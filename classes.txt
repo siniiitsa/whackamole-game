@@ -1,0 +1,37 @@
+# whack-a-mole-game
+
+#UML
+
+Cell
+-------------------
+- x
+- y
+- active
+- taken: player / ai
+===================
+- activate()
+- claim()
+- render()
+-------------------
+
+
+Game
+-------------------
+- playerPoints
+- aiPoints
+- difficulty
+- winner
+===================
+- startGame()
+- endGame()
+- setDifficulty()
+-------------------
+
+
+Board
+-------------------
+- sideX
+- sideY
+===================
+- tick()
+- render()
