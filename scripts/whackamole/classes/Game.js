@@ -57,7 +57,7 @@ export default class Game {
   }
 
   checkForWinner() {
-    const winningScore = 2 || Math.ceil(this.state.board.cells.length / 2);
+    const winningScore = Math.ceil(this.state.board.cells.length / 2);
 
     switch (winningScore) {
       case this.state.aiPoints:
