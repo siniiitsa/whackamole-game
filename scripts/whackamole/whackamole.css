@@ -8,3 +8,19 @@
   height: 40px;
   border: 1px solid black;
 }
+
+.whackamole button.active {
+  color: green;
+}
+
+.whackamole .cell.active {
+  background-color: lightgreen;
+}
+
+.whackamole .cell.player {
+  background-color: blue;
+}
+
+.whackamole .cell.ai {
+  background-color: red;
+}
