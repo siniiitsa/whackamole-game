@@ -21,6 +21,7 @@ export default class Game {
       this.state.playerPoints++;
       this.state.activeCell = null;
       this.controls.setScore(this.state.playerPoints, this.state.aiPoints);
+      this.checkForWinner();
     }
   }
 
@@ -46,13 +47,13 @@ export default class Game {
       this.state.activeCell.claimAi();
       this.state.aiPoints++;
       this.controls.setScore(this.state.playerPoints, this.state.aiPoints);
+      if (this.checkForWinner()) return;
     }
     const cells = this.board.cells.filter(cell => cell.available)
     const idx = Math.floor(Math.random() * cells.length);
     cells[idx].available = false;
     this.state.activeCell = cells[idx];
     cells[idx].activate();
-    this.checkForWinner();
   }
 
   checkForWinner() {
@@ -71,5 +72,6 @@ export default class Game {
 
     this.stop();
     this.controls.showWinner(this.state.winner);
+    return true;
   }
 }
